@@ -1,4 +1,4 @@
-import { describe, expect, test } from 'vitest'
+import Accordion from './Accordion'
 
 describe('Green test', () => {
   test('Should pass', () => {
