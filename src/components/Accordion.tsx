@@ -1,4 +1,4 @@
-import React from 'react'
+import { useState } from 'react'
 
 interface Props {
   title: String
@@ -6,10 +6,14 @@ interface Props {
 }
 
 export default function Accordion({ title, children }: Props) {
+  const [open, setOpen] = useState(false)
+
   return (
     <div>
-      <h3>{title}</h3>
-      <div>{children}</div>
+      <h3 id="Title" onClick={() => setOpen(!open)}>
+        {title}
+      </h3>
+      {open && <div id="Content">{children}</div>}
     </div>
   )
 }
